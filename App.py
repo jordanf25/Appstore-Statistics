@@ -25,4 +25,10 @@ df2 = df2[df2['Type'] == 'Free']
 df1_genres = df1["prime_genre"].value_counts()
 df2_genres = df2["Category"].value_counts()
 
-print(df1_genres)
+#find most common genre of Apple Store DataFrame
+print("Most common Apple Store genre:", df1_genres.index[0])
+print("Most common Google Play Store genre:", df2_genres.index[0])
+
+df1_users = df1.groupby("prime_genre")["rating_count_tot"].sum()
+print("Most popular Apple Store genre by user ratings:", df1_users.idxmax())
+print("Total ratings:", df1_users.max())
