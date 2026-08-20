@@ -29,6 +29,20 @@ df2_genres = df2["Category"].value_counts()
 print("Most common Apple Store genre:", df1_genres.index[0])
 print("Most common Google Play Store genre:", df2_genres.index[0])
 
+#find the most popular genre of Apple Store by user ratings by grouping the dataframe by genre and summing the rating counts for each genre
 df1_users = df1.groupby("prime_genre")["rating_count_tot"].sum()
 print("Most popular Apple Store genre by user ratings:", df1_users.idxmax())
 print("Total ratings:", df1_users.max())
+
+#cleaned the Installs column in the Google Play Store DataFrame by removing commas and plus signs and converting the column to an integer data type
+df2["Installs"] = (
+    df2["Installs"].str.replace(",", "", regex=False).str.replace("+", "", regex=False).astype(int)
+)
+
+df2_users = df2.groupby("Category")["Installs"].sum()
+print("Most popular Google Play Store genre by user ratings:", df2_users.idxmax())
+print("Total ratings:", df2_users.max())
+
+df1_average_ratings = df1.groupby("prime_genre")["rating_count_tot"].mean()
+print("Apple genre with highest average ratings:", df1_average_ratings.idxmax())
+print("Average ratings:", df1_average_ratings.max()) 
