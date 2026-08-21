@@ -40,9 +40,9 @@ df2["Installs"] = (
 )
 
 df2_users = df2.groupby("Category")["Installs"].sum()
-print("Most popular Google Play Store genre by user ratings:", df2_users.idxmax())
-print("Total ratings:", df2_users.max())
+print("Most popular Google Play Store genre by total installs:", df2_users.idxmax())
+print("Total installs:", df2_users.max())
 
-df1_average_ratings = df1.groupby("prime_genre")["rating_count_tot"].mean()
-print("Apple genre with highest average ratings:", df1_average_ratings.idxmax())
-print("Average ratings:", df1_average_ratings.max()) 
+df1_average = df1.groupby("prime_genre")["rating_count_tot"].mean()
+
+print("Average user ratings for Apple Store genres:", )
