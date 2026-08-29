@@ -61,11 +61,15 @@ print(df1_average.sort_values(ascending=False))
 print("Apple genre with highest average ratings:", df1_average.idxmax())
 print("Highest average ratings:", df1_average.max())
 
+print(f"Interpretation: {df1_average.idxmax()} has the highest average number of user ratings per app. This suggests that apps in this genre tend to attract more user activity than apps in other Apple Store genres.")
+
 #find average Installs for Google Play store genres by grouping the dataframe by genre and calculating the mean of the installs for each genre
 df2_average = df2.groupby("Category")["Installs"].mean()
 print("Average installs for Google Play Store genres:", df2_average.sort_values(ascending=False))
 print("Google Play genre with highest average installs:", df2_average.idxmax())
 print("Highest average installs:", df2_average.max())
+
+print(f"Interpretation: {df2_average.idxmax()} has the highest average number of installs per app. This suggests that apps in this category tend to attract more users than apps in other Google Play categories.")
 
 #Google Play Statistics table
 
