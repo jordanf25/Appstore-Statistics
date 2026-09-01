@@ -1,0 +1,1 @@
+AI Assistance: ChatGPT was used as a learning and coding assistant for this project, including explaining Pandas concepts, troubleshooting errors, and developing portions of the analysis. I reviewed, tested, and modified the code to understand how it works.
