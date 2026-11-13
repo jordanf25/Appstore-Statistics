@@ -1,7 +1,7 @@
 #import pandas library and read the AppleStore.csv and googleplaystore.csv files into pandas DataFrames
 import pandas as pd
-df1 = pd.read_csv('/Users/jorda/Downloads/Mobile Appstore Dataset/AppleStore.csv')
-df2 = pd.read_csv('/Users/jorda/Downloads/Google Play dataset/googleplaystore.csv')
+df1 = pd.read_csv('AppleStore.csv')
+df2 = pd.read_csv('googleplaystore.csv')
 
 
 #explore the dataframes by printing the first 5 rows and the summary information of each dataframe
@@ -69,7 +69,7 @@ print("Average installs for Google Play Store genres:", df2_average.sort_values(
 print("Google Play genre with highest average installs:", df2_average.idxmax())
 print("Highest average installs:", df2_average.max())
 
-print(f"Interpretation: {df2_average.idxmax()} has the highest average number of installs per app. This suggests that apps in this category tend to attract more users than apps in other Google Play categories.")
+print(f"Interpretation: {df2_average.idxmax().title()} has the highest average number of installs per app. This suggests that apps in this category tend to attract more users than apps in other Google Play categories.")
 
 #Google Play Statistics table
 
